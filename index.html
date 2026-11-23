@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173d24">
+  <meta name="description" content="Organização Financeira — controle de receitas, despesas, cartões e investimentos.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>Organização Financeira</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="plant">🌿</div>
+        <div><h1>Organização<br>Financeira</h1></div>
+      </div>
+      <div class="top-actions"><button class="icon-btn" aria-label="Notificações">♧</button><button class="icon-btn" id="profileBtn" aria-label="Configurações">◯</button></div>
+    </header>
+
+    <main id="main" class="content"></main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button data-route="inicio" class="nav-btn active">⌂<span>Início</span></button>
+      <button data-route="lancamentos" class="nav-btn">⇄<span>Lançamentos</span></button>
+      <button data-route="investimentos" class="nav-btn">▥<span>Investimentos</span></button>
+      <button data-route="analises" class="nav-btn">◔<span>Análises</span></button>
+      <button data-route="configuracoes" class="nav-btn">⚙<span>Configurações</span></button>
+    </nav>
+  </div>
+
+  <div id="modal" class="modal hidden"></div>
+  <script src="https://cdn.jsdelivr.net/npm/appwrite@14.0.1"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(console.warn);
+  </script>
+</body>
+</html>
